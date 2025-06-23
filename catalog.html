@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Couture - Каталог</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">Luxe Couture</div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Главная</a>
+                    <a href="catalog.html" class="nav-link active">Каталог</a>
+                    <a href="contacts.html" class="nav-link">Контакты</a>
+                </nav>
+                <div class="header-icons">
+                    <a href="#" class="icon-link">🔍</a>
+                    <a href="#" class="icon-link">❤️</a>
+                    <a href="#" class="icon-link">🛒</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Каталог одежды</h1>
+        
+        <div class="catalog-controls">
+            <div class="search-box">
+                <input type="text" placeholder="Поиск по каталогу..." id="search-input">
+            </div>
+            
+            <div class="sorting">
+                <span>Сортировка:</span>
+                <select id="sort-select">
+                    <option value="price-asc">По возрастанию цены</option>
+                    <option value="price-desc">По убыванию цены</option>
+                    <option value="name-asc">По названию (А-Я)</option>
+                    <option value="name-desc">По названию (Я-А)</option>
+                    <option value="newest">Сначала новые</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="products-grid">
+            <!-- Пальто -->
+            <div class="product-card" data-category="coats" data-price="8900" data-date="2025-10-15">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Пальто">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Пальто</div>
+                    <h3 class="product-title">Пальто утепленное</h3>
+                    <div class="product-price">8 900 ₽</div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+
+            <!-- Костюм -->
+            <div class="product-card" data-category="suits" data-price="12500" data-date="2025-09-20">
+                <div class="product-image">
+                    <img src="https://avatars.mds.yandex.net/i?id=bbd5b3522f1d7f9b09fea12477c9bb5cee1ce717-5869144-images-thumbs&n=13" alt="Костюм мужской">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Костюмы</div>
+                    <h3 class="product-title">Костюм мужской классический</h3>
+                    <div class="product-price">12 500 ₽</div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+
+            <!-- Блузка -->
+            <div class="product-card" data-category="blouses" data-price="4500" data-date="2025-11-05">
+                <div class="product-image">
+                    <img src="https://avatars.mds.yandex.net/i?id=9eaff3477deab21ed6dd938858a0997cf316040e-7753557-images-thumbs&n=13" alt="Блузка женская">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Блузки</div>
+                    <h3 class="product-title">Блузка шелковая с воротником</h3>
+                    <div class="product-price">4 500 ₽</div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+
+            <!-- Пиджак -->
+            <div class="product-card" data-category="jackets" data-price="10200" data-date="2025-08-12">
+                <div class="product-image">
+                    <img src="https://cdn1.ozone.ru/s3/multimedia-1-v/6968010307.jpg" alt="Пиджак">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Пиджаки</div>
+                    <h3 class="product-title">Пиджак оверсайз</h3>
+                    <div class="product-price">10 200 ₽</div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+
+            <!-- Платье -->
+            <div class="product-card" data-category="dresses" data-price="7600" data-date="2025-11-20">
+                <div class="product-image">
+                    <img src="https://avatars.mds.yandex.net/get-yabs_performance/14604750/hatff043e33fc8f744fcb68411fb1ce09c8/hugeXX" alt="Платье вечернее">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Платья</div>
+                    <h3 class="product-title">Платье вечернее</h3>
+                    <div class="product-price">7 600 ₽</div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+
+            <!-- Брюки -->
+            <div class="product-card" data-category="pants" data-price="5800" data-date="2025-10-01">
+                <div class="product-image">
+                    <img src="https://avatars.mds.yandex.net/i?id=1c17d6df8f9a1d7522434f186775899bbdefa08e-5288655-images-thumbs&n=13" alt="Брюки">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Брюки</div>
+                    <h3 class="product-title">Брюки классические</h3>
+                    <div class="product-price">5 800 ₽</div>
+                    <button class="btn">В корзину</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <a href="#" class="page-link prev">&laquo;</a>
+            <a href="#" class="page-link active">1</a>
+            <a href="#" class="page-link">2</a>
+            <a href="#" class="page-link">3</a>
+            <span class="page-ellipsis">...</span>
+            <a href="#" class="page-link">5</a>
+            <a href="#" class="page-link next">&raquo;</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Магазин</h4>
+                    <a href="#">Женщинам</a>
+                    <a href="#">Мужчинам</a>
+                    <a href="#">Детям</a>
+                    <a href="#">Новая коллекция</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>О компании</h4>
+                    <a href="#">О нас</a>
+                    <a href="#">Блог</a>
+                    <a href="#">Карьера</a>
+                    <a href="#">Контакты</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Помощь</h4>
+                    <a href="#">Доставка</a>
+                    <a href="#">Возврат</a>
+                    <a href="#">Оплата</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <p>+7 (495) 123-45-67</p>
+                    <p>info@luxecouture.ru</p>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Telegram</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Luxe Couture. Все права защищены.</p>
+                <div class="payment-methods">
+                    <span>💳</span>
+                    <span>📱</span>
+                    <span>💰</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script2.js"></script>
+</body>
+</html>
