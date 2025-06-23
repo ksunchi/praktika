@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Элементы управления
+    
     const searchInput = document.getElementById('search-input');
     const sortSelect = document.getElementById('sort-select');
     const productsGrid = document.querySelector('.products-grid');
     const pagination = document.getElementById('pagination');
     
-    // Получаем все карточки товаров
+
     const productCards = Array.from(document.querySelectorAll('.product-card'));
-    const productsPerPage = 6; // Количество товаров на странице
+    const productsPerPage = 6;
     let currentPage = 1;
     
-    // Функция для фильтрации товаров по поисковому запросу
+   
     function filterProducts(searchTerm) {
         searchTerm = searchTerm.toLowerCase();
         return productCards.filter(card => {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Функция для сортировки товаров
+
     function sortProducts(products, sortMethod) {
         return [...products].sort((a, b) => {
             const priceA = parseInt(a.dataset.price);
@@ -47,41 +47,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Функция для отображения товаров с пагинацией
+ 
     function displayProducts(products, page = 1) {
         currentPage = page;
         const startIndex = (page - 1) * productsPerPage;
         const endIndex = startIndex + productsPerPage;
         const paginatedProducts = products.slice(startIndex, endIndex);
         
-        // Очищаем сетку товаров
+ 
         productsGrid.innerHTML = '';
         
-        // Добавляем отфильтрованные и отсортированные товары
+  
         if (paginatedProducts.length > 0) {
             paginatedProducts.forEach(card => {
                 productsGrid.appendChild(card);
             });
         } else {
-            // Если товаров не найдено
+     
             const noResults = document.createElement('div');
             noResults.className = 'no-results';
             noResults.textContent = 'Товары не найдены. Попробуйте изменить параметры поиска.';
             productsGrid.appendChild(noResults);
         }
         
-        // Обновляем пагинацию
+      
         updatePagination(products.length);
     }
     
-    // Функция для обновления пагинации
+
     function updatePagination(totalProducts) {
         const totalPages = Math.ceil(totalProducts / productsPerPage);
         pagination.innerHTML = '';
         
         if (totalPages <= 1) return;
         
-        // Кнопка "Назад"
+
         const prevLink = document.createElement('a');
         prevLink.href = '#';
         prevLink.className = 'page-link';
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentPage === 1) prevLink.style.visibility = 'hidden';
         pagination.appendChild(prevLink);
         
-        // Нумерация страниц
+  
         const maxVisiblePages = 5;
         let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
         let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
             pagination.appendChild(lastPageLink);
         }
         
-        // Кнопка "Вперед"
+
         const nextLink = document.createElement('a');
         nextLink.href = '#';
         nextLink.className = 'page-link';
@@ -169,21 +169,21 @@ document.addEventListener('DOMContentLoaded', function() {
         pagination.appendChild(nextLink);
     }
     
-    // Переменная для хранения текущего списка товаров
+
     let currentProducts = productCards;
     
-    // Обработчик поиска
+
     searchInput.addEventListener('input', (e) => {
         const searchTerm = e.target.value.trim();
         currentProducts = searchTerm ? filterProducts(searchTerm) : productCards;
         displayProducts(sortProducts(currentProducts, sortSelect.value));
     });
     
-    // Обработчик сортировки
+
     sortSelect.addEventListener('change', (e) => {
         displayProducts(sortProducts(currentProducts, e.target.value));
     });
     
-    // Инициализация - отображаем все товары с первой страницы
+
     displayProducts(sortProducts(productCards, sortSelect.value));
 });
